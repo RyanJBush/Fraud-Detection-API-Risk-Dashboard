@@ -33,7 +33,8 @@ the downloaded dataset checksum or the preserved frozen evaluation artifacts.
 
 ## Remaining limitations
 
-- Hosted CI is claimed only as far as the README states it; see the Actions tab for the live history.
+- Hosted CI: the first public commit (`4ca5a0e`) passed on GitHub Actions (run 43294204336: 308 passed, 1 skipped, synthetic pipeline, tamper
+  refusal). Later commits are covered only by their own runs in the Actions tab.
 - Confirming that the OpenML ARFF equals the Kaggle CSV v3 beyond the published counts still needs a Kaggle login.
 - The model is a demonstration: 75 test positives, a two-day window, undocumented PCA and label process, no entity identifiers,
   uncalibrated scores, and a documented batch-versus-single-row boundary effect. No business savings are claimed.

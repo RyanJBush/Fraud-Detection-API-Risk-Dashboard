@@ -10,8 +10,10 @@ covered by that licence (see [Licence](#licence)).
 >   that one test is intentionally skipped because real data and model artifacts are not included.
 > - Numerical-overflow rejection, strict API/dashboard JSON, artifact checks, loopback binding, and validation-slider
 >   isolation were independently checked. The frozen real model and thresholds were preserved.
-> - **Hosted GitHub Actions: the first run is being inspected; no hosted result is claimed yet.** Local checks do not establish a
->   hosted CI result. Nothing is deployed.
+> - **Hosted GitHub Actions: passed** on commit `4ca5a0e` ([run 43294204336](https://github.com/RyanJBush/fraud-risk-dashboard/actions/runs/43294204336),
+>   `windows-latest`, CPython 3.13.17): install from the pinned requirements, **308 tests passed, 1 skipped** (the private-data test),
+>   the synthetic pipeline, and the tampered-model refusal (exit 9). Later commits have their own runs; see the Actions tab.
+>   Nothing is deployed.
 > - Licensing is decided: MIT for original code, the existing dataset notice and attribution for the data; see
 >   [publication notes](docs/publication.md).
 > - Outputs are **model scores**. Calibration was not evaluated.

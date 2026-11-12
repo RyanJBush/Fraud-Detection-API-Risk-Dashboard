@@ -19,11 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----------------------------------------------------------------------------
-Scope: this MIT licence covers the original code, tests, scripts and
-documentation of this project only. It does NOT cover the Credit Card Fraud
-Detection dataset or anything derived from its contents. The dataset is
-published by Worldline and the Machine Learning Group of ULB under the Open
-Database License (database) and the Database Contents License (contents); see
-NOTICE_DATA.md and licenses/. Third-party packages keep their own licences.

@@ -82,5 +82,6 @@ python -m pytest
 ```
 
 A checkout without private real data is expected to skip `test_confirmed_real_boundary_case_is_reproduced_and_api_matches_offline_single_row`.
-The accepted private v4 run passed all 309 tests. A local run is not a hosted GitHub Actions result; hosted CI is pending.
+The accepted private v4 run passed all 309 tests; the hosted GitHub Actions run on the first public commit passed 308 with the same 1 expected
+skip (see the README for the run link). A local run is not itself a hosted result.
 

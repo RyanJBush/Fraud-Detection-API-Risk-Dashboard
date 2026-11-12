@@ -6,7 +6,7 @@ It is a static report, not a model bundle and not the input to the synthetic dem
 
 Evaluation uses whole-partition batches. The API uses single-row scoring; a documented floating-point boundary case
 changes one validation flag. The reported full test scan found no flag differences. No calibration, savings, or
-deployment performance is claimed. Hosted CI remains pending until a hosted run actually succeeds.
+deployment performance is claimed. Hosted CI passed on the first public commit (see the README for the run link).
 
 Contains information from [Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud),
 made available under the [Open Database License](https://opendatacommons.org/licenses/odbl/1-0/);
