@@ -1,0 +1,86 @@
+{
+  "dataset": {
+    "creators": [
+      "Andrea Dal Pozzolo",
+      "Olivier Caelen",
+      "Gianluca Bontempi"
+    ],
+    "default_target_attribute": "Class",
+    "file_id": 1673544,
+    "format": "ARFF",
+    "name": "creditcard",
+    "openml_id": 1597,
+    "openml_license_field": "Public",
+    "original_source": "https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud",
+    "row_id_attribute_note": "OpenML marks Time as the row id; this project keeps Time as an elapsed-seconds column for chronological partitioning (asserted by data-check).",
+    "row_id_attribute_per_openml": "Time",
+    "upload_date": "2015-06-25T16:52:17",
+    "version": 1,
+    "version_label": "V1_250615"
+  },
+  "file": {
+    "bytes": 150829308,
+    "local_path": "data/raw/creditcard.arff",
+    "md5": "178bcf9bb1f31a3dfe12d0e577884add",
+    "md5_matches_openml": true,
+    "openml_published_md5": "178bcf9bb1f31a3dfe12d0e577884add",
+    "original_filename_in_url": "creditcard.arff",
+    "server_supplied_filename": "attachment; filename=phpKo8OWT.arff",
+    "sha256": "fdaf12730dc1fc426f318b71349f24f5c5fd00aa1152940be7e7509ae3d89d2a"
+  },
+  "git_policy": "data/raw is git-ignored; raw data is never committed",
+  "license_evidence": "docs/license_evidence.md (declaration captured; reuse sign-off pending reviewer)",
+  "metadata_files": {
+    "arff_response_headers.txt": {
+      "bytes": 1169,
+      "sha256": "c23b465f105fffac4219febf44c288adfb165cef41d52050ee49244801d689b3"
+    },
+    "dbcl_1.0_page.html": {
+      "bytes": 27881,
+      "sha256": "e9ab34adb10924a5f0c193cae878e55efead24926202f5c9d47bbf659bd242e9"
+    },
+    "fdb_readme.md": {
+      "bytes": 20020,
+      "sha256": "d812fb687a0008ee702c526e324f54a30f34c7df21bf89156cc09d8d5163d85e"
+    },
+    "kaggle_dataset_page.html": {
+      "bytes": 14416,
+      "sha256": "9abcfee17c39ae2001082450a41149e24a0171763d511cbb7222b4ac8c628fbc"
+    },
+    "odbl_1.0_page.html": {
+      "bytes": 51176,
+      "sha256": "b8d8aebb21bf405f93f6e21bbf0d8f0a749844f9812ec58692f189add6402b47"
+    },
+    "openml_data_1597.json": {
+      "bytes": 2529,
+      "sha256": "fc60f3270694b4238601694e1c777ff278abef800d899168b735c70134976d12"
+    },
+    "openml_data_1597_qualities.json": {
+      "bytes": 6323,
+      "sha256": "de098586c42c962edd71fb94bb51a1853f02ca7371e64a82d54d5b7582b48444"
+    },
+    "retrieval_end_utc.txt": {
+      "bytes": 21,
+      "sha256": "ca6c376b2831e2eb9dd25c564ab8e4d16ce2153b13d02052fa95b815b0e93a12"
+    },
+    "retrieval_start_utc.txt": {
+      "bytes": 21,
+      "sha256": "b01f459dae42665c0d74aadfbb0933838506815f497509442a12fe93954cd16c"
+    }
+  },
+  "retrieval": {
+    "content_disposition": "attachment; filename=phpKo8OWT.arff",
+    "content_length_header": "150829308",
+    "finished_utc": "2026-11-11T06:02:01Z",
+    "http_status": 200,
+    "started_utc": "2026-11-11T06:01:27Z",
+    "tool": "python urllib (scripts/fetch_data.py)"
+  },
+  "source_urls": {
+    "advertised_download": "https://openml.org/data/v1/download/1673544/creditcard.arff",
+    "openml_metadata": "https://www.openml.org/api/v1/json/data/1597",
+    "openml_qualities": "https://www.openml.org/api/v1/json/data/qualities/1597",
+    "original_kaggle_page": "https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud",
+    "resolved_download": "https://www.openml.org/data/v1/download/1673544/creditcard.arff"
+  }
+}

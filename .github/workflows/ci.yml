@@ -1,0 +1,33 @@
+name: ci
+
+# Small job: install the recorded dependencies, run pytest (unit, API and dashboard tests), run the SYNTHETIC
+# offline pipeline. It never downloads real data. Synthetic results prove the code runs, not that fraud is detected.
+on:
+  push:
+  pull_request:
+
+jobs:
+  offline-pipeline:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install recorded dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install -e . --no-deps
+      - name: Unit, end-to-end, API and dashboard tests
+        run: python -m pytest
+      - name: Synthetic offline pipeline (data-check, split, train, evaluate)
+        shell: bash
+        run: |
+          F=tests/fixtures/synthetic_transactions.csv
+          for c in data-check split train evaluate; do
+            python -m fraudrisk "$c" --data "$F" --data-kind synthetic --out artifacts/synthetic
+          done
+      - name: Local API refuses a tampered model
+        shell: bash
+        run: bash scripts/ci_tamper_step.sh artifacts/synthetic

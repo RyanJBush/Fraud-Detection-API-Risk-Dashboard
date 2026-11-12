@@ -1,0 +1,5 @@
+* text=auto eol=lf
+# Hashed byte-for-byte (row ids derive from the file SHA-256): never rewrite line endings.
+tests/fixtures/*.csv -text
+*.gz binary
+*.joblib binary

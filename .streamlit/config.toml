@@ -1,0 +1,6 @@
+[server]
+# Local demo only: never listen on all interfaces. The README also passes --server.address 127.0.0.1 explicitly.
+address = "127.0.0.1"
+
+[browser]
+gatherUsageStats = false

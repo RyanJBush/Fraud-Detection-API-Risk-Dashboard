@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fraudrisk"
+version = "0.1.0"
+description = "Local fraud-scoring API and dashboard with chronological evaluation"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+# Runtime pins live in requirements.txt (exact versions recorded from the verified venv).
+dependencies = ["numpy", "pandas", "scikit-learn", "joblib", "fastapi", "uvicorn", "httpx", "streamlit"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests"]
+addopts = "-q -ra"
+filterwarnings = ["error::sklearn.exceptions.ConvergenceWarning"]

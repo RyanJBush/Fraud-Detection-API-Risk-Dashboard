@@ -1,0 +1,411 @@
+{
+  "attribution": {
+    "citation": "Dal Pozzolo, Caelen, Johnson, Bontempi. Calibrating Probability with Undersampling for Unbalanced Classification. IEEE CIDM, 2015.",
+    "contents_license": "https://opendatacommons.org/licenses/dbcl/1-0/",
+    "database_license": "https://opendatacommons.org/licenses/odbl/1-0/",
+    "notice": "Contains information from Credit Card Fraud Detection, made available under the Open Database License (ODbL).",
+    "source": "https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud"
+  },
+  "data_kind": "real",
+  "dataset": {
+    "file_id": 1673544,
+    "labeled_fraud": 492,
+    "name": "ULB / Worldline Credit Card Fraud Detection",
+    "openml_id": 1597,
+    "rows": 284807,
+    "source_sha256": "fdaf12730dc1fc426f318b71349f24f5c5fd00aa1152940be7e7509ae3d89d2a",
+    "version": 1
+  },
+  "feature_order": [
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8",
+    "V9",
+    "V10",
+    "V11",
+    "V12",
+    "V13",
+    "V14",
+    "V15",
+    "V16",
+    "V17",
+    "V18",
+    "V19",
+    "V20",
+    "V21",
+    "V22",
+    "V23",
+    "V24",
+    "V25",
+    "V26",
+    "V27",
+    "V28",
+    "Amount"
+  ],
+  "interpretation": [
+    "Primary result: all chronological test rows, unchanged partition, observed class distribution.",
+    "Secondary result (previously unseen feature-vector subset): test rows whose exact V1..V28 + Amount vector appears in neither training nor validation. Same fitted model, same baseline score, same frozen thresholds; nothing was re-tuned or re-trained for it.",
+    "If the excluded rows are all non-fraud, every positive stays in the secondary subset and predictions are unchanged, so recall is identical by construction (verified below), and the secondary subset has a higher fraud prevalence.",
+    "Because only non-fraud rows are excluded, precision, F1 and average precision can change partly through the change in prevalence. Do not read those differences as a pure measure of leakage.",
+    "The secondary subset makes no claim of entity independence, duplicate removal or leakage removal: the data has no entity identifiers, and near-identical vectors that are not byte-equal remain.",
+    "Calibration was not evaluated; scores should not be interpreted as validated probabilities. F1 thresholds are a demonstration objective.",
+    "No business savings are claimed."
+  ],
+  "numerical_limitation": {
+    "API": "single-row",
+    "evaluation": "batch",
+    "rule": "exact model_score >= threshold; no epsilon or rounding",
+    "test_flag_differences_in_reported_full_scan": 0,
+    "validation_flag_differences_in_reported_full_scan": 1
+  },
+  "overlap_summary": {
+    "cross_partition_repeated_fingerprints": 1224,
+    "rows_in_crossing_fingerprint_groups": 3967,
+    "test_rows_with_fingerprint_in_train": {
+      "fraud_rows": 0,
+      "rows": 648
+    },
+    "test_rows_with_fingerprint_in_train_or_validation": {
+      "fraud_rows": 0,
+      "rows": 1722
+    },
+    "validation_rows_with_fingerprint_in_train": {
+      "fraud_rows": 0,
+      "rows": 561
+    }
+  },
+  "partition_rule": {
+    "adjusted_boundaries": {
+      "adjustment": "each boundary moved to the first row of its Time group",
+      "rows_moved_earlier": [
+        2,
+        0
+      ],
+      "train_end_exclusive_sorted_position": 170882,
+      "validation_end_exclusive_sorted_position": 227845
+    },
+    "nominal_boundaries": {
+      "formula": "floor(0.60*N), floor(0.80*N) via integer arithmetic (60*N)//100, (80*N)//100",
+      "train_end_exclusive_sorted_position": 170884,
+      "validation_end_exclusive_sorted_position": 227845
+    },
+    "sort": "Time ascending, ties by original row number"
+  },
+  "partitions": {
+    "test": {
+      "fraud_prevalence": 0.001316667251852112,
+      "n_fraud": 75,
+      "n_non_fraud": 56887,
+      "n_rows": 56962,
+      "time_max": 172792.0,
+      "time_min": 145248.0
+    },
+    "train": {
+      "fraud_prevalence": 0.002106716915766435,
+      "n_fraud": 360,
+      "n_non_fraud": 170522,
+      "n_rows": 170882,
+      "time_max": 120395.0,
+      "time_min": 0.0
+    },
+    "validation": {
+      "fraud_prevalence": 0.0010006495444411284,
+      "n_fraud": 57,
+      "n_non_fraud": 56906,
+      "n_rows": 56963,
+      "time_max": 145247.0,
+      "time_min": 120396.0
+    }
+  },
+  "populations": {
+    "excluded_test_rows": {
+      "constant_score_baseline": {
+        "fn": 0,
+        "fp": 1722,
+        "fraction_flagged": 1.0,
+        "fraud_prevalence": 0.0,
+        "n_flagged": 1722,
+        "n_fraud": 0,
+        "n_non_fraud": 1722,
+        "n_rows": 1722,
+        "note": "counts only; average precision and F1 are not reported for a population that may have no positives",
+        "precision": 0.0,
+        "precision_status": "defined",
+        "recall": null,
+        "recall_status": "undefined_no_positive_rows",
+        "threshold": 0.002106716915766435,
+        "threshold_hex": "0x1.1421b082a29adp-9",
+        "tn": 0,
+        "tp": 0
+      },
+      "label": "excluded test rows (feature vector also appears in training or validation)",
+      "model": {
+        "fn": 0,
+        "fp": 0,
+        "fraction_flagged": 0.0,
+        "fraud_prevalence": 0.0,
+        "n_flagged": 0,
+        "n_fraud": 0,
+        "n_non_fraud": 1722,
+        "n_rows": 1722,
+        "note": "counts only; average precision and F1 are not reported for a population that may have no positives",
+        "precision": null,
+        "precision_status": "undefined_no_rows_flagged",
+        "recall": null,
+        "recall_status": "undefined_no_positive_rows",
+        "threshold": 0.11129646331946615,
+        "threshold_hex": "0x1.c7decce1e191dp-4",
+        "tn": 1722,
+        "tp": 0
+      },
+      "n_rows": 1722
+    },
+    "primary": {
+      "constant_score_baseline": {
+        "average_precision": 0.001316667251852112,
+        "average_precision_method": "sklearn.metrics.average_precision_score (not trapezoidal PR-AUC)",
+        "decision_rule": "review_flag = model_score >= threshold",
+        "f1": 0.002629871837579115,
+        "f1_definition": "2TP / (2TP + FP + FN)",
+        "fn": 0,
+        "fp": 56887,
+        "fraction_flagged": 1.0,
+        "fraud_prevalence": 0.001316667251852112,
+        "n_flagged": 56962,
+        "n_fraud": 75,
+        "n_non_fraud": 56887,
+        "n_rows": 56962,
+        "precision": 0.001316667251852112,
+        "precision_defined": true,
+        "precision_status": "defined",
+        "recall": 1.0,
+        "threshold": 0.002106716915766435,
+        "threshold_hex": "0x1.1421b082a29adp-9",
+        "tn": 0,
+        "tp": 75
+      },
+      "label": "all chronological test rows",
+      "model": {
+        "average_precision": 0.6963814584573476,
+        "average_precision_method": "sklearn.metrics.average_precision_score (not trapezoidal PR-AUC)",
+        "decision_rule": "review_flag = model_score >= threshold",
+        "f1": 0.6967741935483871,
+        "f1_definition": "2TP / (2TP + FP + FN)",
+        "fn": 21,
+        "fp": 26,
+        "fraction_flagged": 0.0014044450686422527,
+        "fraud_prevalence": 0.001316667251852112,
+        "n_flagged": 80,
+        "n_fraud": 75,
+        "n_non_fraud": 56887,
+        "n_rows": 56962,
+        "precision": 0.675,
+        "precision_defined": true,
+        "precision_status": "defined",
+        "recall": 0.72,
+        "threshold": 0.11129646331946615,
+        "threshold_hex": "0x1.c7decce1e191dp-4",
+        "tn": 56861,
+        "tp": 54
+      },
+      "n_rows": 56962
+    },
+    "secondary_previously_unseen_feature_vector_subset": {
+      "constant_score_baseline": {
+        "average_precision": 0.0013577118030412745,
+        "average_precision_method": "sklearn.metrics.average_precision_score (not trapezoidal PR-AUC)",
+        "decision_rule": "review_flag = model_score >= threshold",
+        "f1": 0.0027117418421766246,
+        "f1_definition": "2TP / (2TP + FP + FN)",
+        "fn": 0,
+        "fp": 55165,
+        "fraction_flagged": 1.0,
+        "fraud_prevalence": 0.0013577118030412745,
+        "n_flagged": 55240,
+        "n_fraud": 75,
+        "n_non_fraud": 55165,
+        "n_rows": 55240,
+        "precision": 0.0013577118030412745,
+        "precision_defined": true,
+        "precision_status": "defined",
+        "recall": 1.0,
+        "threshold": 0.002106716915766435,
+        "threshold_hex": "0x1.1421b082a29adp-9",
+        "tn": 0,
+        "tp": 75
+      },
+      "label": "previously unseen feature-vector subset",
+      "model": {
+        "average_precision": 0.696431404584525,
+        "average_precision_method": "sklearn.metrics.average_precision_score (not trapezoidal PR-AUC)",
+        "decision_rule": "review_flag = model_score >= threshold",
+        "f1": 0.6967741935483871,
+        "f1_definition": "2TP / (2TP + FP + FN)",
+        "fn": 21,
+        "fp": 26,
+        "fraction_flagged": 0.001448225923244026,
+        "fraud_prevalence": 0.0013577118030412745,
+        "n_flagged": 80,
+        "n_fraud": 75,
+        "n_non_fraud": 55165,
+        "n_rows": 55240,
+        "precision": 0.675,
+        "precision_defined": true,
+        "precision_status": "defined",
+        "recall": 0.72,
+        "threshold": 0.11129646331946615,
+        "threshold_hex": "0x1.c7decce1e191dp-4",
+        "tn": 55139,
+        "tp": 54
+      },
+      "n_rows": 55240
+    }
+  },
+  "provenance": {
+    "evaluated_at_utc": "2026-11-11T06:34:23Z",
+    "frozen_at_utc": "2026-11-11T06:34:16Z",
+    "frozen_config_sha256": "8518296e640086a4902751a98a27f94cc5a7f6da9b9161abfc0faa0fd0b256e2",
+    "model_sha256": "74c02a2af5eac43b0b0f44f147408d35b62f477a577c07afcd4ee2357eaccaa2",
+    "model_version": "lr-74c02a2af5ea",
+    "threshold_version": "thr-e0c196ea5ff2"
+  },
+  "reconciliation": {
+    "all_positive_rows_retained_in_secondary": true,
+    "all_reconcile": true,
+    "checks": {
+      "constant_score_baseline.fn": {
+        "equal": true,
+        "primary": 0,
+        "secondary_plus_excluded": 0
+      },
+      "constant_score_baseline.fp": {
+        "equal": true,
+        "primary": 56887,
+        "secondary_plus_excluded": 56887
+      },
+      "constant_score_baseline.n_flagged": {
+        "equal": true,
+        "primary": 56962,
+        "secondary_plus_excluded": 56962
+      },
+      "constant_score_baseline.n_fraud": {
+        "equal": true,
+        "primary": 75,
+        "secondary_plus_excluded": 75
+      },
+      "constant_score_baseline.n_non_fraud": {
+        "equal": true,
+        "primary": 56887,
+        "secondary_plus_excluded": 56887
+      },
+      "constant_score_baseline.n_rows": {
+        "equal": true,
+        "primary": 56962,
+        "secondary_plus_excluded": 56962
+      },
+      "constant_score_baseline.tn": {
+        "equal": true,
+        "primary": 0,
+        "secondary_plus_excluded": 0
+      },
+      "constant_score_baseline.tp": {
+        "equal": true,
+        "primary": 75,
+        "secondary_plus_excluded": 75
+      },
+      "model.fn": {
+        "equal": true,
+        "primary": 21,
+        "secondary_plus_excluded": 21
+      },
+      "model.fp": {
+        "equal": true,
+        "primary": 26,
+        "secondary_plus_excluded": 26
+      },
+      "model.n_flagged": {
+        "equal": true,
+        "primary": 80,
+        "secondary_plus_excluded": 80
+      },
+      "model.n_fraud": {
+        "equal": true,
+        "primary": 75,
+        "secondary_plus_excluded": 75
+      },
+      "model.n_non_fraud": {
+        "equal": true,
+        "primary": 56887,
+        "secondary_plus_excluded": 56887
+      },
+      "model.n_rows": {
+        "equal": true,
+        "primary": 56962,
+        "secondary_plus_excluded": 56962
+      },
+      "model.tn": {
+        "equal": true,
+        "primary": 56861,
+        "secondary_plus_excluded": 56861
+      },
+      "model.tp": {
+        "equal": true,
+        "primary": 54,
+        "secondary_plus_excluded": 54
+      }
+    },
+    "recall_identical_primary_vs_secondary": {
+      "constant_score_baseline": true,
+      "model": true
+    },
+    "recall_identity_expected": true,
+    "same_rows_for_both_scorers_within_each_population": true
+  },
+  "selection_rule": {
+    "decision_rule": "review_flag = model_score >= threshold",
+    "objective": "maximize validation F1 = 2TP / (2TP + FP + FN); candidates are every distinct validation score under the inclusive >= rule; F1 ties are broken by choosing the highest threshold",
+    "selected_on": "full chronological validation partition only; no test population used"
+  },
+  "status": "independently reviewed local batch evaluation; hosted CI pending",
+  "validation_selection": {
+    "baseline": {
+      "decision_rule": "review_flag = model_score >= threshold",
+      "n_candidate_thresholds": 1,
+      "n_candidates_tied_at_best_f1": 1,
+      "n_validation_positive": 57,
+      "n_validation_rows": 56963,
+      "objective": "maximize validation F1 = 2TP / (2TP + FP + FN); candidates are every distinct validation score under the inclusive >= rule; F1 ties are broken by choosing the highest threshold",
+      "threshold": 0.002106716915766435,
+      "threshold_hex": "0x1.1421b082a29adp-9",
+      "validation_f1": 0.001999298491757278,
+      "validation_f1_denominator": 57020,
+      "validation_f1_numerator": 114,
+      "validation_fn": 0,
+      "validation_fp": 56906,
+      "validation_tn": 0,
+      "validation_tp": 57
+    },
+    "model": {
+      "decision_rule": "review_flag = model_score >= threshold",
+      "n_candidate_thresholds": 55858,
+      "n_candidates_tied_at_best_f1": 1,
+      "n_validation_positive": 57,
+      "n_validation_rows": 56963,
+      "objective": "maximize validation F1 = 2TP / (2TP + FP + FN); candidates are every distinct validation score under the inclusive >= rule; F1 ties are broken by choosing the highest threshold",
+      "threshold": 0.11129646331946615,
+      "threshold_hex": "0x1.c7decce1e191dp-4",
+      "validation_f1": 0.6942148760330579,
+      "validation_f1_denominator": 121,
+      "validation_f1_numerator": 84,
+      "validation_fn": 15,
+      "validation_fp": 22,
+      "validation_tn": 56884,
+      "validation_tp": 42
+    }
+  }
+}

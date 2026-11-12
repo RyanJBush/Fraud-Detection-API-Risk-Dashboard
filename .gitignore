@@ -1,0 +1,43 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+.venv/
+
+# Raw data is never committed.
+data/raw/
+
+# Generated; regenerate with the README commands. Hashes are in the review packet.
+artifacts/
+evidence/
+review_packet/
+
+# Third-party page captures stay local (hashed in data/manifest.json); decide before publishing.
+data/meta/*.html
+data/meta/fdb_readme.md
+fraud-risk-milestone1-review-packet.zip
+fraud-risk-milestone1-review-packet.zip.sha256
+fraud-risk-dashboard-review-packet.zip
+fraud-risk-dashboard-review-packet.zip.sha256
+fraud-risk-dashboard-review-packet-v4.zip
+fraud-risk-dashboard-review-packet-v4.zip.sha256
+
+# Local environments, temporary requests, and private review history.
+.venv*/
+venv/
+.env
+.env.*
+!.env.example
+.pytest-temp*/
+request.json
+history/
+*review-packet*.zip
+*review-packet*.zip.sha256
+# Private capture and one-off handoff utilities are not publication material.
+data/meta/arff_response_headers.txt
+docs/prior_project_inspection.md
+scripts/build_packet.py
+scripts/build_review_attachments.py
+scripts/sanitizer_evidence.py
+scripts/transfer_project.py
+scripts/verify_readme_setup.sh

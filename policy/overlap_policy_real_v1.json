@@ -1,0 +1,35 @@
+{
+  "policy_id": "overlap-policy-real-v1",
+  "applies_to": "OpenML 1597 v1 creditcard.arff, chronological 60/20/20 split as saved in split_manifest.json",
+  "decision": {
+    "decided_by": "ChatGPT (independent reviewer), relayed by the user",
+    "scope_note": "Approves the evaluation policy only. ChatGPT had not inspected the implementation or verified the review packet when it made this decision.",
+    "primary_evaluation": "Keep the chronological train, validation and test partitions unchanged. Evaluate all 56,962 chronological test rows with their observed class distribution.",
+    "secondary_evaluation": "Also evaluate the test rows whose exact V1..V28 + Amount vector appears in neither training nor validation. Label: 'previously unseen feature-vector subset'.",
+    "never_call_the_secondary_subset": ["entity-independent", "duplicate-free", "leakage-free"],
+    "model_and_thresholds": "One model fitted on training rows only. Thresholds selected on the full validation partition by the declared validation-F1 rule (ties: highest threshold). The same fitted model, baseline score and thresholds are used for both test populations. No second model and no second threshold.",
+    "no_rows_dropped_from_any_partition": true
+  },
+  "expected": {
+    "data_sha256": "fdaf12730dc1fc426f318b71349f24f5c5fd00aa1152940be7e7509ae3d89d2a",
+    "membership_sha256": "e22df492eca315bd6089f1dc7afd739963bb9c42ba85fadd81979ecb12341195",
+    "n_rows": 284807,
+    "train_rows": 170882,
+    "validation_rows": 56963,
+    "test_rows": 56962,
+    "train_fraud": 360,
+    "validation_fraud": 57,
+    "test_fraud": 75,
+    "cross_partition_repeated_fingerprints": 1224,
+    "rows_in_crossing_fingerprint_groups": 3967,
+    "validation_rows_with_fingerprint_in_train": 561,
+    "test_rows_with_fingerprint_in_train": 648,
+    "test_rows_with_fingerprint_in_train_or_validation": 1722,
+    "fraud_rows_in_crossing_groups": 0,
+    "crossing_groups_with_conflicting_labels": 0,
+    "secondary_subset_rows": 55240,
+    "secondary_subset_fraud": 75,
+    "excluded_test_rows": 1722,
+    "excluded_test_fraud": 0
+  }
+}
