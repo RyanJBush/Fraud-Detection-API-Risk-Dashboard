@@ -20,6 +20,7 @@ Reproduction creates model artifacts locally from a declared fixture or the pinn
 ## Licensing decisions (recorded 2026-11-12, by the owner)
 
 1. **Code license:** MIT, for the original project code, tests, scripts and documentation. Copyright line: "RyanJBush".
+   On 2026-11-22, at the owner's request, the line was changed to "Ryan J. Bush" for consistency across the owner's repositories; the license terms did not change.
 2. **Dataset attribution/publication:** the existing [NOTICE_DATA.md](../NOTICE_DATA.md), source declaration, and linked terms were
    approved for public publication. The dataset licences (ODbL for the database, DbCL for the contents) do not license this
    repository's code, and the MIT licence does not cover the dataset.
