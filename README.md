@@ -1,4 +1,10 @@
-# Fraud Detection API & Risk Dashboard (local, offline-trained)
+# Fraud Detection API & Risk Dashboard
+
+**Fraud Risk Scoring, Model Evaluation & Interactive Analytics** (local, offline-trained)
+
+A reproducible fraud-classification project combining chronological model evaluation, a local FastAPI scoring service,
+and an interactive Streamlit dashboard for examining model scores and review decisions. The model is trained offline and
+served only on the local machine; nothing is deployed.
 
 An offline transaction-classification pipeline that shows the tradeoff between catching labeled fraud and flagging
 labeled non-fraud transactions, plus a **local** scoring API (FastAPI) and a small dashboard (Streamlit) over the frozen
